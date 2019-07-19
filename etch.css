@@ -1,0 +1,26 @@
+body {
+    margin: 0;
+    padding: 0;
+}
+
+.row {
+    display: flex;
+    flex-direction: row;
+}
+
+#container .row:last-child .square {
+    border-bottom: 1px solid red;
+}
+.row .square:last-child {
+    border-right: 1px solid red;
+}
+
+.square {
+    display: inline-block;
+    flex: 0 1 auto;
+    width: 30px;
+    height: 30px;
+    background-color: blue;
+    border-left: 1px solid red;
+    border-top: 1px solid red;
+}
