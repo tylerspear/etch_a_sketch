@@ -15,8 +15,8 @@ clear.addEventListener('click', function() {
     }
 
     let squareCount = 0;
-    while(squareCount < 16 || squareCount > 64) {
-        squareCount = prompt("select size of grid (16-64)");
+    while(squareCount < 16 || squareCount > 100) {
+        squareCount = prompt("select size of grid (16-100)");
     }
 
     buildSquares(squareCount)
