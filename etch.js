@@ -2,23 +2,26 @@
 const container = document.querySelector("#container");
 //get the clear button
 const clear = document.querySelector("#clear");
-
 //initial grid build
 buildSquares(16);
 
 //set up click listener
 clear.addEventListener('click', function() {
     let rows = document.querySelectorAll(".row");
+    let squareCount = 0;
+
     //when click, clear the background color of the squares
     for(let i = 0; i < rows.length; i++) {
         container.removeChild(rows[i]);
     }
 
-    let squareCount = 0;
-    while(squareCount < 16 || squareCount > 100) {
-        squareCount = prompt("select size of grid (16-100)");
+    //validate user input
+    do {
+        squareCount = parseInt(prompt("select size of grid (16-100)"));
     }
-
+    while(isNaN(squareCount) || squareCount > 100 || squareCount < 16);
+    console.log(squareCount);
+    console.log(typeof squareCount);
     buildSquares(squareCount)
 
 })
